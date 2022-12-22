@@ -11,6 +11,8 @@ gem "sprockets-rails"
 
 gem 'awesome_print', '~> 1.9', '>= 1.9.2'
 
+gem 'better_errors', '~> 2.9', '>= 2.9.1'
+
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
