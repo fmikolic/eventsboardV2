@@ -61,6 +61,10 @@ class EventsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
+
+    rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "User does not exist!"
+      redirect_to events_path
     end
 
     # Only allow a list of trusted parameters through.
