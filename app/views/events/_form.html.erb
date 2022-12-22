@@ -23,12 +23,12 @@
 
   <div>
     <%= form.label :start_date, style: "display: block" %>
-    <%= form.datetime_field :start_date %>
+    <%= form.datetime_select(:start_date, order: [:day, :month, :year], start_year: Date.current.year, prompt: true)%>
   </div>
 
   <div>
     <%= form.label :end_date, style: "display: block" %>
-    <%= form.datetime_field :end_date %>
+    <%= form.datetime_select(:end_date, order: [:day, :month, :year], start_year: Date.current.year, prompt: true) %>
   </div>
 
   <div>
