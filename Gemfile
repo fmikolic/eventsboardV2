@@ -13,6 +13,10 @@ gem 'awesome_print', '~> 1.9', '>= 1.9.2'
 
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 

@@ -68,6 +68,8 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    autoprefixer-rails (10.4.7.0)
+      execjs (~> 2)
     awesome_print (1.9.2)
     better_errors (2.9.1)
       coderay (>= 1.0.0)
@@ -76,6 +78,9 @@ GEM
     bindex (0.8.1)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
     builder (3.2.4)
     capybara (3.38.0)
       addressable
@@ -94,6 +99,10 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.11.0)
+    execjs (2.8.1)
+    ffi (1.15.5)
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -172,6 +181,8 @@ GEM
       io-console (~> 0.5)
     rexml (3.2.5)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     selenium-webdriver (4.7.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -218,8 +229,10 @@ DEPENDENCIES
   awesome_print (~> 1.9, >= 1.9.2)
   better_errors (~> 2.9, >= 2.9.1)
   bootsnap
+  bootstrap-sass (~> 3.4, >= 3.4.1)
   capybara
   debug
+  font-awesome-rails (~> 4.7, >= 4.7.0.8)
   importmap-rails
   jbuilder
   puma (~> 5.0)
