@@ -17,6 +17,8 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 
+gem 'simple_form', '~> 5.1'
+
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
