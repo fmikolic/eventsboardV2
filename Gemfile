@@ -15,7 +15,7 @@ gem 'better_errors', '~> 2.9', '>= 2.9.1'
 
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 
-gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+gem 'font-awesome-sass', '~> 6.2', '>= 6.2.1'
 
 gem 'simple_form', '~> 5.1'
 
