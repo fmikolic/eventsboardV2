@@ -1,29 +1,34 @@
-<%= simple_form_for(event) do |form| %>
-  <% if event.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
 
-      <ul>
-        <% event.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= simple_form_for(event) do |form| %>
+      <% if event.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-<%# simple form inputs %>
-  <%= form.input :title %>
+          <ul>
+            <% event.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <%= form.input :description %>
+      <%= form.input :title %>
 
-  <%= form.input :start_date, as: :datetime, start_year: Date.today.year, order: [:day, :month, :year] %>
+      <%= form.input :description %>
 
-  <%= form.input :end_date, as: :datetime, start_year: Date.today.year, order: [:day, :month, :year] %>
+      <%= form.input :start_date, as: :datetime, start_year: Date.today.year, order: [:day, :month, :year] %>
 
-  <%= form.input :venue %>
+      <%= form.input :end_date, as: :datetime, start_year: Date.today.year, order: [:day, :month, :year] %>
 
-  <%= form.input :location %>
+      <%= form.input :venue %>
 
-  <%= form.button :submit, class: "btn btn-primary" %>
+      <%= form.input :location %>
 
-<% end %>
+      <%= form.button :submit, class: "btn btn-primary" %>
+
+    <% end %>
+  </div>
+</div>
+
