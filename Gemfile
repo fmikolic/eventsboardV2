@@ -19,6 +19,8 @@ gem 'font-awesome-sass', '~> 6.2', '>= 6.2.1'
 
 gem 'simple_form', '~> 5.1'
 
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 
