@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorize_owner!, only: [:edit, :update, :destroy]
 
   # GET /events or /events.json
   def index
@@ -22,6 +24,7 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
+    @event.organizer = current_user
 
     respond_to do |format|
       if @event.save
@@ -65,6 +68,15 @@ class EventsController < ApplicationController
     rescue ActiveRecord::RecordNotFound
       flash[:alert] = "User does not exist!"
       redirect_to events_path
+    end
+
+    def authorize_owner!
+      authenticate_user!
+
+      unless @event.organizer == current_user
+        flash[:alert] = "You do not have enough permission to '#{action_name}' the '#{@event.title.upcase}' event!"
+        redirect_to events_path
+      end
     end
 
     # Only allow a list of trusted parameters through.
