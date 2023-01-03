@@ -9,17 +9,41 @@ gem 'rails', '~> 7.0.4'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
+
+#--------------------additional gems added for project -------------------------
+
 gem 'awesome_print', '~> 1.9', '>= 1.9.2'
 
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 
+#todo: font awesome icons not working
 gem 'font-awesome-sass', '~> 6.2', '>= 6.2.1'
 
 gem 'simple_form', '~> 5.1'
 
-gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'devise', '~> 4.8', '>= 4.8.1' #authentication
+
+gem 'pundit', '~> 2.3' #autorization
+
+gem 'friendly_id', '~> 5.5' #search engine optimization
+
+gem 'carrierwave', '~> 2.2', '>= 2.2.3' #image upload
+
+gem 'fog', '~> 2.3' #carrierwave dependency, cloud image upload
+
+gem 'mini_magick', '~> 4.12' #carrierwave dependency
+
+gem 'searchkick', '~> 5.1', '>= 5.1.1' #for search function
+
+gem 'will_paginate', '~> 3.3', '>= 3.3.1' #for pagination
+
+gem 'bootstrap-will_paginate', '~> 1.0' #for bootstrap-style pagination
+
+
+#--------------------------------------------------------------------------------
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
