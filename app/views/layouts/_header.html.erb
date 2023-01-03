@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -24,7 +24,16 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <%unless user_signed_in? %>
+          <li class="<%="active" if current_page?("/users/sign_up")%>"><%= link_to "Sign up", new_user_registration_path %></li>
+          <li class="<%="active" if current_page?("/users/sign_in")%>"><%= link_to "Sign in", new_user_session_path %></li>
+        <% end %>
+        <% if user_signed_in? %>
+            <li class="<%="active" if current_page?("/users/edit")%>"><%= link_to current_user.username, edit_user_registration_path%></li>
+            <li class="<%="active" if current_page?("/users/#{current_user.id}") %>"><%= link_to "My events", user_path(current_user) %></li>
+            <%# If you use link_to instead of button_to to sign out it will throw error with routes %>
+            <li><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn"%></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
