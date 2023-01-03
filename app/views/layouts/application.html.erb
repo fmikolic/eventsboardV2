@@ -19,6 +19,19 @@
   <%= render "layouts/header"%>
 
   <div class="container">
+  <p class="notice">
+    <%= notice %>
+  </p>
+  <p class="alert">
+    <%= alert %>
+  </p>
+
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-<%= type %>">
+        <%= msg %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </div>
 </body>
