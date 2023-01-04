@@ -1,30 +1,37 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :authorize_owner!, only: [:edit, :update, :destroy]
+  #before_action :authorize_owner!, only: [:edit, :update, :destroy]
 
   # GET /events or /events.json
   def index
     @events = Event.order(created_at: :desc)
+    authorize @events, :index?
   end
 
   # GET /events/1 or /events/1.json
   def show
+    authorize @event, :show?
   end
 
   # GET /events/new
   def new
     @event = Event.new
+
+    authorize @event, :new?
   end
 
   # GET /events/1/edit
   def edit
+    authorize @event, :edit?
   end
 
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
     @event.organizer = current_user
+
+    authorize @event, :create?
 
     respond_to do |format|
       if @event.save
@@ -39,6 +46,9 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1 or /events/1.json
   def update
+
+    authorize @event, :update?
+
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to event_url(@event), notice: "Event was successfully updated." }
@@ -52,8 +62,9 @@ class EventsController < ApplicationController
 
   # DELETE /events/1 or /events/1.json
   def destroy
+    authorize @event, :destroy?
     @event.destroy
-
+    
     respond_to do |format|
       format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
       format.json { head :no_content }
@@ -70,14 +81,14 @@ class EventsController < ApplicationController
       redirect_to events_path
     end
 
-    def authorize_owner!
-      authenticate_user!
+    # def authorize_owner!
+    #   authenticate_user!
 
-      unless @event.organizer == current_user
-        flash[:alert] = "You do not have enough permission to '#{action_name}' the '#{@event.title.upcase}' event!"
-        redirect_to events_path
-      end
-    end
+    #   unless @event.organizer == current_user
+    #     flash[:alert] = "You do not have enough permission to '#{action_name}' the '#{@event.title.upcase}' event!"
+    #     redirect_to events_path
+    #   end
+    # end
 
     # Only allow a list of trusted parameters through.
     def event_params
