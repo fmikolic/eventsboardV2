@@ -22,11 +22,11 @@ class EventPolicy < ApplicationPolicy
     create?
   end
 
-  def update
+  def update?
     user.present? && user == event.organizer
   end
 
-  def edit
+  def edit?
     update?
   end
 
