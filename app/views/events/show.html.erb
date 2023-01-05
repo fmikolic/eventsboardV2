@@ -4,7 +4,7 @@
 <h1 id="show-title"><%= @event.title %></h1>
 <ul class = "actions">
   <li><%= link_to "Edit this event", edit_event_path(@event), class: "edit" if policy(@event).edit? %></li>
-  <li><%= button_to "Destroy this event", @event, method: :delete , class: "btn btn-danger" if policy(@event).destroy? %></li>
+  <li><%= link_to "Destroy this event", event_path(@event), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } , class: "btn btn-danger" if policy(@event).destroy? %></li>
 </ul>
 </header>
 
