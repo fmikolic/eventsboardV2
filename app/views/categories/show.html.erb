@@ -1,12 +1,18 @@
-<header>
-  <h1>Events</h1>
+<% provide(:title, @category.name) %>
 
-  <ul class="actions">
-    <li>
-      <%= link_to "New event" , new_event_path, class: "new" if policy(Event).new? %>
-    </li>
-  </ul>
+<header>
+    <h1 class = "text-uppercase"><%= @category.name %> <small>Events</small></h1>
+
+
+    <ul class="actions">
+        <% admins_only do %>
+            <li><%= link_to "Edit Category", edit_admin_category_path(@category), class: "edit" %></li>
+
+            <li><%= link_to "Delete Category", admin_category_path(@category), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "delete" %></li>
+        <% end %>
+    </ul>
 </header>
+
 
 <div class="row">
   <div class="col-sm-3 pull-right">
@@ -26,8 +32,8 @@
   <div class="col-sm-9">
     <h3>Discover and register to your favorite events</h3>
   </div>
-    <% @events.each do |event| %>
-      <%= render event %>
+    <% @categories.each do |category| %>
+      <%= render category %>
     <% end %>
   </div>
 </div>
