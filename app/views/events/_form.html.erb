@@ -26,6 +26,8 @@
 
       <%= form.input :location %>
 
+      <%= form.input :category_id, collection: Category.all, label: "Select Category", prompt: true %>
+
       <%= form.input :image, as: :file, label: "Upload Event Image" %>
 
       <%= form.button :submit, class: "btn btn-primary" %>
