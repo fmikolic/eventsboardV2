@@ -37,6 +37,8 @@ gem 'mini_magick', '~> 4.12' #carrierwave dependency
 
 gem 'searchkick', '~> 5.1', '>= 5.1.1' #for search function
 
+gem "elasticsearch" # dependency for searchkick
+
 gem 'will_paginate', '~> 3.3', '>= 3.3.1' #for pagination
 
 gem 'bootstrap-will_paginate', '~> 1.0' #for bootstrap-style pagination

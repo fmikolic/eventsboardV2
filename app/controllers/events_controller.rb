@@ -5,7 +5,12 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = Event.order(created_at: :desc)
+    if params[:query].present?
+      @events = Event.search(params[:query])
+    else
+      @events = Event.order(created_at: :desc)
+    end
+    
     @categories = Category.order(:name)
     authorize @events, :index?
   end
