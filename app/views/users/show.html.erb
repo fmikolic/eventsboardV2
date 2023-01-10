@@ -21,6 +21,7 @@
                 <th>Start date</th>
                 <th>End date</th>
                 <th>Event status</th>
+                <th>Capacity</th>
                 <th colspan="3"></th>
             </tr>
         </thead>
@@ -31,6 +32,7 @@
                         <td><%= time_format(event.start_date) %></td>
                         <td><%= time_format(event.end_date) %></td>
                         <td><%= event_status(event) %></td>
+                        <td><%= event.seats %></td>
                         <td>
                             <%= link_to "Edit", edit_event_path(event), class: "edit" if policy(event).edit? %>
                             <%= link_to "Delete", event_path(event), method: :delete, class: "delete" if policy(event).destroy? %>
@@ -58,6 +60,7 @@
                 <th>Start date</th>
                 <th>End date</th>
                 <th>Event status</th>
+                <th>Seats left</th>
                 <th colspan="3"></th>
             </tr>
         </thead>
@@ -68,6 +71,7 @@
                         <td><%= time_format(event.start_date) %></td>
                         <td><%= time_format(event.end_date) %></td>
                         <td><%= event_status(event) %></td>
+                        <td><%= event.seats_left %></td>
                         <td>
                             <%= link_to "Edit", edit_event_path(event), class: "edit" if policy(event).edit? %>
                             <%= link_to "Delete", event_path(event), method: :delete, class: "delete" if policy(event).destroy? %>
