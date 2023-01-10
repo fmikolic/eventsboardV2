@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :events
+  #nested resources events/event_id/comments
+  resources :events do 
+    resources :comments, only: [:create]
+  end
+
   resources :users, only: [:show]
   resources :categories, only: [:show]
   
