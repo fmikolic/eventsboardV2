@@ -29,10 +29,10 @@
                 <% end %>
             </li>
             <li>
-                <%= link_to "#" do %>
+                <%= link_to admin_attendances_path do %>
                     <%#= fa_icon "users" %>
                     <span> Attendees </span>
-                    <span class="label label-primary pull-right"> attendees </span>
+                    <span class="label label-primary pull-right"> <%= @attendances.count %> </span>
                 <% end %>
             </li>
             <li>

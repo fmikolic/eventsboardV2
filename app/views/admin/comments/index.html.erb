@@ -1,5 +1,24 @@
 <header>
     <h1> All Comments </h1>
-
-    
 </header>
+
+<table class="table table-striped table-responsive">
+    <thead>
+        <tr>
+            <th>Author</th>
+            <th>Body</th>
+            <th>Created</th>
+            <th>Event</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @comments.each do |comment| %>
+            <tr>
+                <th><%= comment.author.full_name if comment.author %></th>
+                <th><%= truncate(comment.body, length: 30) %></th>
+                <th><%= time_format(comment.created_at) %></th>
+                <th><%= link_to comment.event.title, event_path(comment.event) %></th>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

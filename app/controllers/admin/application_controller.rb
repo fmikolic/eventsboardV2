@@ -6,6 +6,7 @@ class Admin::ApplicationController < ApplicationController
     @events = Event.all
     @categories = Category.all
     @comments = Comment.all
+    @attendances = Attendance.all
   end
 
 
