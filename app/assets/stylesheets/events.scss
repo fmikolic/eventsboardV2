@@ -91,17 +91,33 @@
 }
 
 #like {
-  font-size: 24px;
+  //font-size: 24px;
+  width: 50px;
+  height: 25px;
+  display: block;
+  background: #449d44;
+  
 
   &:before {
+    content: "Like";
+    color: white;
+
     @extend .fa-thumbs-o-up !optional;
   }
 }
 
 #dislike {
-  font-size: 24px;
+  //font-size: 24px;
+
+  width: 50px;
+  height: 25px;
+  display: block;
+  background: #c9302c;
 
   &:before {
+    content: "Dislike";
+    color: white;
+
     @extend .fa-thumbs-o-down !optional;
   }
 }
