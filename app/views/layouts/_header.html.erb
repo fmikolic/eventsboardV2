@@ -33,7 +33,7 @@
         <% end %>
         <% if user_signed_in? %>
             <li class="<%="active" if current_page?("/users/edit")%>"><%= link_to edit_user_registration_path do %>
-              <span> image </span> <%= current_user.username %>
+              <%= image_tag avatar_url(current_user), class: "img-circle", width: 25 %>  <%= current_user.username %>
             <% end %>
             </li>
             <li class="<%="active" if current_page?("/users/#{current_user.id}") %>"><%= link_to "My events", user_path(current_user) %></li>
