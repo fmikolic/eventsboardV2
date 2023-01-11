@@ -30,6 +30,8 @@
 
       <%= form.input :seats, label: "Capacity", hint: "The number of attendees to the event" %>
 
+      <%= form.input :tag_list, label: "Tags", hint: "Please enter comma (,) separated words" %>
+
       <%= form.input :image, as: :file, label: "Upload Event Image" %>
 
       <%= form.button :submit, class: "btn btn-primary" %>
