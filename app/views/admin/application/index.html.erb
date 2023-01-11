@@ -15,49 +15,49 @@
             <li class="text-uppercase text-center header">Main Navigation </li>
             <li>
                 <%= link_to admin_users_path do %>
-                    <%#= fa_icon "users" %>
+                    <%=  icon("fa-regular", "far fa-user") %>
                     <span> Users </span>
                     <span class="label label-primary pull-right"> <%= @users.count %> </span>
                 <% end %>
             </li>
             <li>
                 <%= link_to admin_categories_path do %>
-                    <%#= fa_icon "th" %>
+                    <%=  icon("fa-regular", "fas fa-th-list") %>
                     <span> Categories </span>
                     <span class="label label-info pull-right"> <%= @categories.count %> </span>
                 <% end %>
             </li>
             <li>
                 <%= link_to admin_attendances_path do %>
-                    <%#= fa_icon "users" %>
+                    <%=  icon("fa-regular", "far fa-user") %>
                     <span> Attendees </span>
                     <span class="label label-primary pull-right"> <%= @attendances.count %> </span>
                 <% end %>
             </li>
             <li>
                 <%= link_to "#" do %>
-                    <%#= fa_icon "calendar" %>
+                    <%=  icon("fa-regular", "fas fa-calendar") %>
                     <span> Events </span>
                     <span class="label label-warning pull-right"> <%= @events.count %> </span>
                 <% end %>
             </li>
             <li>
                 <%= link_to "#" do %>
-                    <%#= fa_icon "tag" %>
+                    <%=  icon("fa-regular", "fas fa-tags") %>
                     <span> Tags </span>
                     <span class="label label-default pull-right"> <%= @tags.count %> </span>
                 <% end %>
             </li>
             <li>
                 <%= link_to admin_comments_path do %>
-                    <%#= fa_icon "comments" %>
+                    <%=  icon("fa-regular", "fas fa-comments") %>
                     <span> Comments </span>
                     <span class="label label-primary pull-right"><%= @comments.count %></span>
                 <% end %>
             </li>
             <li>
                 <%= link_to "#" do %>
-                    <%#= fa_icon "heart" %>
+                    <%=  icon("fa-regular", "fas fa-heart") %>
                     <span> Likes </span>
                     <span class="label label-danger pull-right"> <%= @likes.count %> </span>
                 <% end %>

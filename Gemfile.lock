@@ -550,7 +550,7 @@ DEPENDENCIES
   devise (~> 4.8, >= 4.8.1)
   elasticsearch
   fog (~> 2.3)
-  font-awesome-sass (~> 6.2, >= 6.2.1)
+  font-awesome-sass (~> 6.2.1)
   friendly_id (~> 5.5)
   importmap-rails
   jbuilder
