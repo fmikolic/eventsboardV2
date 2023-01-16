@@ -33,6 +33,10 @@ gem 'carrierwave', '~> 2.2', '>= 2.2.3' #image upload
 
 gem 'fog', '~> 2.3' #carrierwave dependency, cloud image upload
 
+gem 'fog-ovirt', '~> 2.0', '>= 2.0.2' #dependency fog
+
+gem 'ovirt-engine-sdk', '~> 4.4', '>= 4.4.1' #dependency fog-ovirt
+
 gem 'mini_magick', '~> 4.12' #carrierwave dependency
 
 gem 'searchkick', '~> 5.1', '>= 5.1.1' #for search function
