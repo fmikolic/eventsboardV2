@@ -61,7 +61,7 @@
     </div>
     <hr>
     <div class="sidebar">
-      <h4 class="likes">Likes</h4>
+      <h4 class="likes"> Likes </h4>
       <%= link_to event_likes_path(@event, like: "like"), data: { turbo_method: :post} do %> 
         <span id="like"><%= @event.likes_total %></span>
       <% end %>

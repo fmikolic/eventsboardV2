@@ -42,19 +42,19 @@
 
 .event-venue {
   &:before {
-    @extend .fa-map-marker !optional;
+    @extend %glyphicon-map-marker !optional;
   }
 }
 
 .event-start {
   &:before {
-    @extend .fa-calendar !optional;
+    @extend %glyphicon-calendar !optional;
   }
 }
 
 .event-end {
   &:before {
-    @extend .fa-calendar-o !optional;
+    @extend %glyphicon-calendar !optional;
   }
 }
 
@@ -62,7 +62,7 @@
   font-size: 24px;
 
   &:before {
-    @extend .fa-compass !optional;
+    @extend %glyphicon-globe !optional;
   }
 }
 
@@ -70,7 +70,7 @@
   font-size: 24px;
 
   &:before {
-    @extend .fa-user !optional;
+    @extend %glyphicon-user !optional;
   }
 }
 
@@ -78,7 +78,7 @@
   font-size: 24px;
 
   &:before {
-    @extend .fa-tag !optional;
+    @extend %glyphicon-tags !optional;
   }
 }
 
@@ -86,39 +86,23 @@
    font-size: 24px;
 
    &:before {
-     @extend .fa-heart !optional;
+    @extend %glyphicon-heart-empty !optional;
   }
 }
 
 #like {
-  //font-size: 24px;
-  width: 50px;
-  height: 25px;
-  display: block;
-  background: #449d44;
+  font-size: 24px;
   
-
   &:before {
-    content: "Like";
-    color: white;
-
-    @extend .fa-thumbs-o-up !optional;
+    @extend %glyphicon-thumbs-up !optional;
   }
 }
 
 #dislike {
-  //font-size: 24px;
-
-  width: 50px;
-  height: 25px;
-  display: block;
-  background: #c9302c;
+  font-size: 24px;
 
   &:before {
-    content: "Dislike";
-    color: white;
-
-    @extend .fa-thumbs-o-down !optional;
+    @extend %glyphicon-thumbs-down !optional;
   }
 }
 
@@ -151,7 +135,7 @@ a #dislike,
   font-size: 24px;
 
   &:before {
-    @extend .fa-users !optional;
+    @extend %glyphicon-user !optional;
   }
 }
 

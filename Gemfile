@@ -21,6 +21,8 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 #todo: font awesome icons not working
 gem 'font-awesome-sass', '~> 6.2', '>= 6.2.1'
 
+gem 'glyphicons-rails'
+
 gem 'simple_form', '~> 5.1'
 
 gem 'devise', '~> 4.8', '>= 4.8.1' #authentication

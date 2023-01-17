@@ -4,6 +4,8 @@
 @import "events";
 @import "admin/application.scss";
 @import "home";
+@import "glyphicons";
+
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -57,7 +59,7 @@ a.new {
   @extend .btn-success !optional;
 
   &:before {
-    @extend .fa-plus !optional;
+    @extend %glyphicon-plus !optional;
   }
 }
 
@@ -65,7 +67,7 @@ a.edit {
   @extend .btn-primary !optional;
 
   &:before {
-    @extend .fa-pencil !optional;
+    @extend %glyphicon-pencil !optional;
   }
 }
 
@@ -73,7 +75,7 @@ a.delete {
   @extend .btn-danger !optional;
 
   &:before {
-    @extend .fa-trash !optional;
+    @extend %glyphicon-trash !optional;
   }
 }
 
@@ -114,13 +116,13 @@ span.past {
 
 span.upcoming {
   &:before {
-    @extend .fa-check !optional;
+    @extend %glyphicon-ok !optional;
   }
 }
 
 span.past {
   &:before {
-    @extend .fa-close !optional;
+    @extend %glyphicon-remove !optional;
   }
 }
 
